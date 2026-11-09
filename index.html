@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head><title>AI Smart Tools</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{font-family:sans-serif;background:#111;color:white;text-align:center;padding:15px}button{background:#ff0050;color:white;padding:12px 20px;border:none;border-radius:10px;margin:5px;font-weight:bold}input,select{width:92%;padding:13px;border-radius:10px;margin:8px;border:none}.box{background:#1e1e1e;padding:18px;border-radius:15px;margin-top:15px;text-align:left}.tab{background:#333}.active{background:#ff0050}</style>
+</head><body>
+<h1>🤖 AI Smart Tools</h1><p>By Prince Travel - FREE</p>
+<button class="tab active" onclick="show('t1',this)">Bio Tool</button>
+<button class="tab" onclick="show('t2',this)">Trip Planner</button>
+<button class="tab" onclick="show('t3',this)">Problem Solver</button>
+<button class="tab" onclick="show('t4',this)">Hashtag</button>
+<div id="t1" class="box"><h3>📱 Bio Generator</h3><input id="topic" placeholder="Jaise: Travel"><br><button onclick="bio()">Bio Banao</button><p id="o1"></p></div>
+<div id="t2" class="box" style="display:none"><h3>🚌 Trip Planner</h3><select id="place"><option>Ujjain - Mahakal</option><option>Omkareshwar</option><option>Maheshwar</option><option>Mandu</option></select><input id="budget" type="number" placeholder="Budget Jaise: 500"><br><button onclick="trip()">Plan Banao</button><p id="o2"></p></div>
+<div id="t3" class="box" style="display:none"><h3>🤔 Problem Solver</h3><input id="prob" placeholder="Jaise: Paise nahi hai"><br><button onclick="solve()">Hal Batao</button><p id="o3"></p></div>
+<div id="t4" class="box" style="display:none"><h3># Hashtag Generator</h3><input id="ht" placeholder="Jaise: Travel"><br><button onclick="hash()">Hashtag Banao</button><p id="o4"></p></div>
+<script>
+function show(id,b){document.querySelectorAll('.box').forEach(e=>e.style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.tab').forEach(e=>e.classList.remove('active'));b.classList.add('active');}
+function bio(){let t=document.getElementById('topic').value||'Travel';document.getElementById('o1').innerText="🔥 "+t+" Lover | 📍 Indore | Daily Viral Reels | Follow @princepurwar007";}
+function trip(){let p=document.getElementById('place').value;let b=document.getElementById('budget').value||500;document.getElementById('o2').innerHTML="✅ "+p+" Trip ₹"+b+" me<br>🚌 Bus: ₹220 | 🍲 Khana: ₹150 | 🛕 Darshan: FREE";}
+function solve(){let q=document.getElementById('prob').value.toLowerCase();let a="✅ Hal: Problem ko chhota karo, aaj 1 step lo.";if(q.includes("paise"))a="💰 Hal: 1) Roz 1 Reel banao 2) Dukaan ki FREE reel banao fir ₹500 lo";if(q.includes("reel"))a="📱 Hal: 1) Pehle 2 sec me jawab do 2) Roz 9 baje reel";if(q.includes("padhai"))a="📚 Hal: 1) 25 min phone dur 2) Subah 6-8 padho";if(q.includes("ujjain"))a="🚌 Hal: Indore-Ujjain Bus ₹110, Darshan FREE, Total ₹500 me trip!";document.getElementById('o3').innerText=a;}
+function hash(){let t=document.getElementById('ht').value||'Travel';document.getElementById('o4').innerText="#"+t+" #viral #reels #indore #trending #explorepage";}
+</script>
+</body></html>
